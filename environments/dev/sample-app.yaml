@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app-dev
+  namespace: cd
+spec:
+  projects: default
+  source:
+    repoURL: https://github.com/Pragyan-101/k8s-gitops.git
+    targetRevision: HEAD
+    path: apps/sample-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
