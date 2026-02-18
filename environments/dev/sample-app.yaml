@@ -4,7 +4,7 @@ metadata:
   name: sample-app-dev
   namespace: cd
 spec:
-  projects: default
+  project: default
   source:
     repoURL: https://github.com/Pragyan-101/k8s-gitops.git
     targetRevision: HEAD
